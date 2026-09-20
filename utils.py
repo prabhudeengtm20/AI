@@ -12,7 +12,7 @@ def get_apikey():
     """
     
     # Construct the full path to the configuration file
-    script_dir = "/Users/prabhudeengautam/Workplace/chatbot/"
+    script_dir = "./"
     file_path = os.path.join(script_dir, "apikeys.yml")
 
     with open(file_path, 'r') as yamlfile:
