@@ -4,6 +4,9 @@ from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.core.agent.workflow import ReActAgent
 from llama_index.llms.openai import OpenAI
 
+# Workaround for "unhashable type: 'ReActAgent'" in the workflows serializer cache
+ReActAgent.__hash__ = object.__hash__
+
 import chainlit as cl
 from chainlit.input_widget import Select, TextInput
 
