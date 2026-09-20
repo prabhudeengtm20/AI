@@ -1,0 +1,6 @@
+llama-index
+llama-index-readers-wikipedia
+chainlit
+openai
+pyyaml
+wikipedia
