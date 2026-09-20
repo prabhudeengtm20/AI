@@ -1,27 +1,12 @@
-# REPLACE THIS WITH YOUR CODE
 import os
-import yaml
+
+
 def get_apikey():
-    """
-    Reads API key from a configuration file.
-
-    This function opens a configuration file named "apikeys.yml", reads the API key for OpenAI
-
-    Returns:
-    api_key (str): The OpenAI API key.
-    """
-    
-    # Construct the full path to the configuration file
-    script_dir = "./"
-    file_path = os.path.join(script_dir, "apikeys.yml")
-
-    with open(file_path, 'r') as yamlfile:
-        # REPLACE THIS WITH YOUR CODE
-        config = yaml.safe_load(yamlfile)
-        openai_config = config.get("openai")
-        API_KEY = openai_config.get("api_key")
-        
-    return API_KEY
+    """Read the OpenAI API key from the OPENAI_API_KEY environment variable."""
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY environment variable is not set")
+    return api_key
 
 
 if __name__ == "__main__":
